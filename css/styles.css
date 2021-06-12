@@ -571,7 +571,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: var(--transition-duration) opacity cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: var(--transition-duration) opacity cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .is-hidden {
   opacity: 0;
@@ -583,9 +583,15 @@ body {
   height: 581px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   background-color: #fff;
   padding: 8px;
+
+  transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 .modal-icon-close {
